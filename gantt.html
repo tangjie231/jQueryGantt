@@ -34,7 +34,7 @@
   <script src="ganttTask.js"></script>
   <script src="ganttDrawerSVG.js"></script>
   <script src="ganttGridEditor.js"></script>
-  <script src="ganttMaster.js"></script>  
+  <script src="ganttMaster.js"></script>
 </head>
 <body style="background-color: #fff;">
 
@@ -437,15 +437,15 @@ function editResources(){
     <tr style="height:40px">
       <th class="gdfColHeader" style="width:35px; border-right: none"></th>
       <th class="gdfColHeader" style="width:25px;"></th>
-      <th class="gdfColHeader gdfResizable" style="width:100px;">code/short name</th>
+      <th class="gdfColHeader gdfResizable" style="width:10px;display:none;">code/short name</th>
       <th class="gdfColHeader gdfResizable" style="width:300px;">任务名称</th>
       <th class="gdfColHeader"  align="center" style="width:17px;" title="Start date is a milestone."><span class="teamworkIcon" style="font-size: 8px;">^</span></th>
       <th class="gdfColHeader gdfResizable" style="width:110px;">开始时间</th>
       <th class="gdfColHeader"  align="center" style="width:17px;" title="End date is a milestone."><span class="teamworkIcon" style="font-size: 8px;">^</span></th>
       <th class="gdfColHeader gdfResizable" style="width:110px;">结束时间</th>
-      <th class="gdfColHeader gdfResizable" style="width:120px;">持续时间（天）</th>
-      <th class="gdfColHeader gdfResizable" style="width:100px;">完成百分比%</th>
-      <th class="gdfColHeader gdfResizable requireCanSeeDep" style="width:30px;">依赖任务</th>
+      <th class="gdfColHeader gdfResizable" style="width:80px;">持续(天)</th>
+      <th class="gdfColHeader gdfResizable" style="width:100px;">完成比(%)</th>
+      <th class="gdfColHeader gdfResizable requireCanSeeDep" style="width:80px;">依赖任务</th>
       <th class="gdfColHeader gdfResizable" style="width:150px; text-align: left; padding-left: 10px;">资源</th>
     </tr>
     </thead>
@@ -456,7 +456,7 @@ function editResources(){
   <tr taskId="(#=obj.id#)" class="taskEditRow (#=obj.isParent()?'isParent':''#) (#=obj.collapsed?'collapsed':''#)" level="(#=level#)">
     <th class="gdfCell edit" align="right" style="cursor:pointer;"><span class="taskRowIndex">(#=obj.getRow()+1#)</span> <span class="teamworkIcon" style="font-size:12px;" >e</span></th>
     <td class="gdfCell noClip" align="center"><div class="taskStatus cvcColorSquare" status="(#=obj.status#)"></div></td>
-    <td class="gdfCell"><input type="text" name="code" value="(#=obj.code?obj.code:''#)" placeholder="code/short name"></td>
+    <td class="gdfCell" style="display:none;"><input type="text" name="code" value="(#=obj.code?obj.code:''#)" placeholder="code/short name"></td>
     <td class="gdfCell indentCell" style="padding-left:(#=obj.level*10+18#)px;">
       <div class="exp-controller" align="center"></div>
       <input type="text" name="name" value="(#=obj.name#)" placeholder="name">
@@ -476,7 +476,7 @@ function editResources(){
   <tr class="taskEditRow emptyRow" >
     <th class="gdfCell" align="right"></th>
     <td class="gdfCell noClip" align="center"></td>
-    <td class="gdfCell"></td>
+    <td class="gdfCell" style="display:none;"></td>
     <td class="gdfCell"></td>
     <td class="gdfCell"></td>
     <td class="gdfCell"></td>
