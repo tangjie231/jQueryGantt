@@ -1,5 +1,7 @@
 package com.tj.ctrls;
 
+import io.swagger.annotations.Api;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * @author:jie.tang on 2018-01-02 15:53
  * desc:
  */
+@Api(value = "product", description = "商品管理", produces = MediaType.APPLICATION_JSON_VALUE)
 @Controller
 @RequestMapping("/gantt")
 public class HomeCtrl {
